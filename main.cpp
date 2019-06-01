@@ -8,11 +8,30 @@
 using namespace std;
 
 void task1() { // Oddzielajacy rdzen na ktorym dziala program z pythona
-    system("D:/Programy/Python_3.7.1/python.exe test.py");
+    for ever{
+		cout << "Drugi rdzen\n";
+		Sleep(1100);
+	}
+}
+
+void task2() { // Oddzielajacy rdzen na ktorym dziala program z pythona
+    for ever{
+		cout << "Trzeci rdzen\n";
+		Sleep(1200);
+	}
+}
+
+void task3() { // Oddzielajacy rdzen na ktorym dziala program z pythona
+    for ever{
+		cout << "Czwarty rdzen\n";
+		Sleep(1300);
+	}
 }
 
 int main (int argc, char ** argv) {
     thread thread_1 = thread(task1); // stworzenie rdzeni
+	thread thread_2 = thread(task2);
+	thread thread_3 = thread(task3);
 	
 	// main - pierwszy rdzen
 	// thread_1 - drugi rdzen
@@ -24,7 +43,8 @@ int main (int argc, char ** argv) {
 	}
 	
 	thread_1.join(); // wlaczenie rdzeni
-	
+	thread_2.join();
+	thread_3.join();
     return 0;
 }
 
